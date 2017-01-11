@@ -14,7 +14,7 @@ function pdf-decrypt() {
   }
   case $1 in -h|--help|''):
     echo Usage: \"$0 [file]\".
-    echo Removes passwort-protection from PDF-File called [file].
+    echo Removes password-protection from PDF file called [file].
     exit 0
     ;;
   esac
@@ -26,7 +26,7 @@ function pdf-decrypt() {
       if [[ "$encryptionStatus" == "File is not encrypted" ]]; then
           echo $encryptionStatus.
       else
-          echo "Passwort: "
+          echo "Password: "
           read password
 
           tempFile=$(mktemp)
