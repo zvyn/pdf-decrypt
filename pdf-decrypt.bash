@@ -20,7 +20,7 @@ function pdf-decrypt() {
   esac
   if [ -f "$1" ]; then 
       local file="$1"
-      local encryptionStatus="$(qpdf --show-encryption $file 2>/dev/null)"
+      local encryptionStatus="$(qpdf --show-encryption \"$file\" 2>/dev/null)"
       local tempFile=""
       local password=""
       if [[ "$encryptionStatus" == "File is not encrypted" ]]; then
